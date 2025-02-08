@@ -3,8 +3,10 @@ const multer = require('multer');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs').promises;
+require('dotenv').config();
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 // Enable CORS
 app.use(cors({
@@ -37,7 +39,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  limits: { fileSize: 100 * 1024 * 1024 } // 100MB limit
+  limits: { fileSize: 100 * 1024 * 1024 }, // 100MB limit
+  fileFilter: (req, file, cb) => {
+    // Add file type validation if needed
+    cb(null, true);
+  }
 }).single('file');
 
 // Helper function to analyze file content
@@ -193,17 +199,24 @@ app.delete('/api/files/:filename', async (req, res) => {
   }
 });
 
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date() });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Global error handler:', err.stack);
   res.status(500).json({ 
     error: 'Something went wrong!',
-    details: err.message
+    details: err.message,
+    timestamp: new Date()
   });
 });
 
-const PORT = process.env.PORT || 3001;
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV}`);
   console.log(`CORS enabled for origins: http://localhost:5173, http://localhost:3000`);
 });
