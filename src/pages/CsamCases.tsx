@@ -39,8 +39,8 @@ const App = () => {
         </thead>
         <tbody>
           <tr>
-            <td>New software update was released</td>
-            <td>Increased system efficiency</td>
+            <td>CBI raided multiple states to crack down on CSAM distribution based on Interpol intelligence.</td>
+            <td>Highlighted the scale of CSAM circulation and strengthened law enforcement monitoring.</td>
           </tr>
           <tr>
             <td>System faced an unexpected crash</td>
