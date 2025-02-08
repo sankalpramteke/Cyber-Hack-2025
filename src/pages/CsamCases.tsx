@@ -83,7 +83,6 @@ const CsamCases: React.FC = () => {
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow">
-        <DataTable data={mockData} columns={columns} />
       </div>
     </div>
   );
