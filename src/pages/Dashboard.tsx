@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, ResponsiveContainer } from 'recharts';
 import { useTheme } from '../context/ThemeContext';
+import CSAMCasesVisual from '../components/CSAMCasesVisual';
 
 const data = [
   { name: 'Jan', cases: 400, investigations: 240, resolved: 180 },
@@ -104,59 +105,7 @@ const Dashboard = () => {
             </ResponsiveContainer>
           </div>
         </div>
-        
-        <div className={`${theme.cardBg} p-6 rounded-lg shadow-lg transition-all duration-200`}>
-          <h2 className={`text-lg font-semibold mb-6 ${theme.text}`}>Investigation Trends</h2>
-          <div className="w-full h-[400px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke={isDarkMode ? '#374151' : '#E5E7EB'} />
-                <XAxis 
-                  dataKey="name" 
-                  stroke={isDarkMode ? '#fff' : '#374151'}
-                  tick={{ fill: isDarkMode ? '#fff' : '#374151' }}
-                />
-                <YAxis 
-                  stroke={isDarkMode ? '#fff' : '#374151'}
-                  tick={{ fill: isDarkMode ? '#fff' : '#374151' }}
-                />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: isDarkMode ? '#1F2937' : '#fff',
-                    borderColor: isDarkMode ? '#374151' : '#E5E7EB',
-                    color: isDarkMode ? '#fff' : '#374151',
-                    borderRadius: '8px',
-                    padding: '12px'
-                  }}
-                />
-                <Legend 
-                  wrapperStyle={{ 
-                    color: isDarkMode ? '#fff' : '#374151',
-                    paddingTop: '20px'
-                  }}
-                />
-                <Line 
-                  type="monotone" 
-                  dataKey="investigations" 
-                  stroke="#8B5CF6" 
-                  name="Active Investigations"
-                  strokeWidth={2}
-                  dot={{ fill: '#8B5CF6', strokeWidth: 2 }}
-                  activeDot={{ r: 6, fill: '#8B5CF6' }}
-                />
-                <Line 
-                  type="monotone" 
-                  dataKey="resolved" 
-                  stroke="#F43F5E" 
-                  name="Resolved Cases"
-                  strokeWidth={2}
-                  dot={{ fill: '#F43F5E', strokeWidth: 2 }}
-                  activeDot={{ r: 6, fill: '#F43F5E' }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
+        <CSAMCasesVisual />
       </div>
     </div>
   );
