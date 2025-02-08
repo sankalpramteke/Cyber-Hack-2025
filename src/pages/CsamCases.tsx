@@ -88,5 +88,4 @@ const App = () => {
     </div>
   );
 };
-
 export default CsamCases;
