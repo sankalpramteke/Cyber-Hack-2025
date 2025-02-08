@@ -1,7 +1,5 @@
 import React from 'react';
-import DataTable from '../components/DataTable';
 import { useTheme } from '../context/ThemeContext';
-import { Tooltip } from 'recharts';
 
 const CsamCases: React.FC = () => {
   const { theme, isDarkMode } = useTheme();
@@ -21,18 +19,18 @@ const CsamCases: React.FC = () => {
                 <th className={`py-3 px-4 text-left ${theme.text}`}>Impact</th>
               </tr>
             </thead>
-            <tbody className={theme.text}>
+            <tbody>
               <tr className={`border-b ${theme.border}`}>
-                <td className="py-3 px-4">CBI raided multiple states to crack down on CSAM distribution based on Interpol intelligence.</td>
-                <td className="py-3 px-4">Highlighted the scale of CSAM circulation and strengthened law enforcement monitoring.</td>
+                <td className={`py-3 px-4 ${theme.text}`}>CBI raided multiple states to crack down on CSAM distribution based on Interpol intelligence.</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Highlighted the scale of CSAM circulation and strengthened law enforcement monitoring.</td>
               </tr>
               <tr className={`border-b ${theme.border}`}>
-                <td className="py-3 px-4">System faced an unexpected crash</td>
-                <td className="py-3 px-4">Loss of productivity for users</td>
+                <td className={`py-3 px-4 ${theme.text}`}>System faced an unexpected crash</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Loss of productivity for users</td>
               </tr>
               <tr className={`border-b ${theme.border}`}>
-                <td className="py-3 px-4">Team implemented new security protocol</td>
-                <td className="py-3 px-4">Enhanced data protection</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Team implemented new security protocol</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Enhanced data protection</td>
               </tr>
             </tbody>
           </table>
@@ -52,37 +50,34 @@ const CsamCases: React.FC = () => {
                 <th className={`py-3 px-4 text-left ${theme.text}`}>Outcome</th>
               </tr>
             </thead>
-            <tbody className={theme.text}>
+            <tbody>
               <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900' : 'bg-blue-100'}`}>
+                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
                   Software Update
                 </td>
-                <td className="py-3 px-4">A new version of the software was released</td>
-                <td className="py-3 px-4">Team rolled out the update to all users</td>
-                <td className="py-3 px-4">Boosted performance and efficiency</td>
+                <td className={`py-3 px-4 ${theme.text}`}>A new version of the software was released</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Team rolled out the update to all users</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Boosted performance and efficiency</td>
               </tr>
               <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900' : 'bg-blue-100'}`}>
+                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
                   System Crash
                 </td>
-                <td className="py-3 px-4">The system crashed unexpectedly</td>
-                <td className="py-3 px-4">IT team investigated and restored the system</td>
-                <td className="py-3 px-4">Short-term data loss, minor delays</td>
+                <td className={`py-3 px-4 ${theme.text}`}>The system crashed unexpectedly</td>
+                <td className={`py-3 px-4 ${theme.text}`}>IT team investigated and restored the system</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Short-term data loss, minor delays</td>
               </tr>
               <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900' : 'bg-blue-100'}`}>
+                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
                   Security Enhancement
                 </td>
-                <td className="py-3 px-4">A new security protocol was implemented</td>
-                <td className="py-3 px-4">Security systems were upgraded</td>
-                <td className="py-3 px-4">Improved security and fewer breaches</td>
+                <td className={`py-3 px-4 ${theme.text}`}>A new security protocol was implemented</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Security systems were upgraded</td>
+                <td className={`py-3 px-4 ${theme.text}`}>Improved security and fewer breaches</td>
               </tr>
             </tbody>
           </table>
         </div>
-      </div>
-
-      <div className="bg-white p-6 rounded-lg shadow">
       </div>
     </div>
   );
