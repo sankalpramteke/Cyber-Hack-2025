@@ -1,53 +1,37 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "cyber-hack-2025",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "postinstall": "npm run build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.3.0",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/material": "^6.4.3",
-    "@tanstack/react-table": "^8.12.0",
-    "@types/socket.io-client": "^1.4.36",
-    "axios": "^1.7.9",
-    "body-parser": "^1.20.3",
-    "express": "^4.21.2",
-    "gridfs-stream": "^1.1.1",
-    "lucide-react": "^0.344.0",
-    "mongoose": "^8.10.0",
-    "multer": "^1.4.4",
-    "multer-gridfs-storage": "^5.0.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.29.0",
-    "recharts": "^2.15.1",
-    "socket.io-client": "^4.8.1"
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.0",
+    "@tanstack/react-table": "^8.9.3",
+    "axios": "^1.4.0",
+    "lucide-react": "^0.244.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
+    "recharts": "^2.6.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.18",
-    "eslint": "^9.9.1",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.11",
-    "globals": "^15.9.0",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.3.0",
-    "vite": "^5.4.2"
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.9"
   }
 }
