@@ -48,15 +48,6 @@ const CsamCases: React.FC = () => {
                 <td className={`py-3 px-4 ${theme.text}`}>IT team investigated and restored the system</td>
                 <td className={`py-3 px-4 ${theme.text}`}>Short-term data loss, minor delays</td>
               </tr>
-
-              <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
-                  Security Enhancement
-                </td>
-                <td className={`py-3 px-4 ${theme.text}`}>A new security protocol was implemented</td>
-                <td className={`py-3 px-4 ${theme.text}`}>Security systems were upgraded</td>
-                <td className={`py-3 px-4 ${theme.text}`}>Improved security and fewer breaches</td>
-              </tr>
             </tbody>
           </table>
         </div>
