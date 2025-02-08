@@ -1,5 +1,5 @@
 import React from 'react';
-import 
+import { useTheme } from '../context/ThemeContext';
 
 const CsamCases: React.FC = () => {
   const { theme, isDarkMode } = useTheme();
