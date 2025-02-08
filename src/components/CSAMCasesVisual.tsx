@@ -16,6 +16,7 @@ interface CSAMData {
 const CSAMCasesVisual = () => {
   const { theme, isDarkMode } = useTheme();
 
+  // Static data for visualization
   const csamData: CSAMData[] = [
     {
       imageName: 'image11.jpg',
@@ -51,8 +52,8 @@ const CSAMCasesVisual = () => {
   ];
 
   const confidenceData = csamData.map(item => ({
-    name: item.imageName,
-    confidence: item.detections.reduce((max, det) => Math.max(max, det.score), 0) * 100
+    name: item.imageName.replace('uploads\\', ''),
+    confidence: Math.round(item.detections.reduce((max, det) => Math.max(max, det.score), 0) * 100)
   }));
 
   const classDistribution = csamData.reduce((acc, item) => {
@@ -63,9 +64,18 @@ const CSAMCasesVisual = () => {
   }, {} as Record<string, number>);
 
   const classData = Object.entries(classDistribution).map(([className, count]) => ({
-    name: className.replace('_', ' '),
+    name: className.replace(/_/g, ' '),
     count
   }));
+
+  if (!confidenceData.length || !classData.length) {
+    return (
+      <div className={`${theme.cardBg} p-6 rounded-lg shadow-lg`}>
+        <h2 className={`text-lg font-semibold mb-6 ${theme.text}`}>CSAM Detection Analysis</h2>
+        <p className={`${theme.text}`}>No detection data available</p>
+      </div>
+    );
+  }
 
   return (
     <div className={`${theme.cardBg} p-6 rounded-lg shadow-lg`}>
@@ -82,6 +92,9 @@ const CSAMCasesVisual = () => {
                 dataKey="name"
                 stroke={isDarkMode ? '#fff' : '#374151'}
                 tick={{ fill: isDarkMode ? '#fff' : '#374151' }}
+                angle={-45}
+                textAnchor="end"
+                height={60}
               />
               <YAxis
                 stroke={isDarkMode ? '#fff' : '#374151'}
@@ -96,6 +109,7 @@ const CSAMCasesVisual = () => {
                   borderRadius: '8px',
                   padding: '12px'
                 }}
+                formatter={(value: number) => [`${value}%`, 'Confidence']}
               />
               <Bar
                 dataKey="confidence"
@@ -119,6 +133,9 @@ const CSAMCasesVisual = () => {
                 dataKey="name"
                 stroke={isDarkMode ? '#fff' : '#374151'}
                 tick={{ fill: isDarkMode ? '#fff' : '#374151' }}
+                angle={-45}
+                textAnchor="end"
+                height={60}
               />
               <YAxis
                 stroke={isDarkMode ? '#fff' : '#374151'}
