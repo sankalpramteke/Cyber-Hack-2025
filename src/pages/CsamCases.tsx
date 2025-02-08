@@ -2,51 +2,47 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const CsamCases: React.FC = () => {
-  const { theme, isDarkMode } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={`space-y-8 ${theme.bg} min-h-screen p-4`}>
-      <h1 className={`text-2xl font-bold ${theme.text} mb-8`}>Notable CSAM Cases and their Impact in India</h1>
+      <h1 className={`text-2xl font-bold ${theme.text} mb-8`}>Notable CSAM Cases in India & Their Impact</h1>
       
-      {/* Combined Table: What Happened, Impact, and Detailed Event Information */}
       <div className={`${theme.cardBg} rounded-lg shadow p-6 mb-8`}>
-        <h2 className={`text-xl font-semibold ${theme.text} mb-4`}>Summary and Detailed Event Information</h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full table-auto">
+          <table className="min-w-full table-auto border-collapse border border-gray-400">
             <thead>
-              <tr className={`border-b ${theme.border}`}>
-                <th className={`py-3 px-4 text-left ${theme.text}`} colSpan={2}>What Happened</th>
-                <th className={`py-3 px-4 text-left ${theme.text}`} colSpan={2}>Impact</th>
+              <tr className={`border ${theme.border} bg-gray-200`}>
+                <th className={`py-3 px-4 text-left ${theme.text} border`}>Case</th>
+                <th className={`py-3 px-4 text-left ${theme.text} border`}>What Happened?</th>
+                <th className={`py-3 px-4 text-left ${theme.text} border`}>Impact</th>
               </tr>
             </thead>
             <tbody>
-              {/* First Row: What Happened and Impact */}
-              <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${theme.text}`} colSpan={2}>
-                  CBI raided multiple states to crack down on CSAM distribution based on Interpol intelligence.
-                </td>
-                <td className={`py-3 px-4 ${theme.text}`} colSpan={2}>
-                  Highlighted the scale of CSAM circulation and strengthened law enforcement monitoring.
-                </td>
+              <tr className="border border-gray-300">
+                <td className="py-3 px-4 border">Operation Megh Chakra (2023)</td>
+                <td className="py-3 px-4 border">CBI raided multiple states to crack down on CSAM distribution based on Interpol intelligence.</td>
+                <td className="py-3 px-4 border">Highlighted the scale of CSAM circulation and strengthened law enforcement monitoring.</td>
               </tr>
-
-              {/* Second Row: Event, Details, Action, Outcome */}
-              <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
-                  Software Update
-                </td>
-                <td className={`py-3 px-4 ${theme.text}`}>A new version of the software was released</td>
-                <td className={`py-3 px-4 ${theme.text}`}>Team rolled out the update to all users</td>
-                <td className={`py-3 px-4 ${theme.text}`}>Boosted performance and efficiency</td>
+              <tr className="border border-gray-300">
+                <td className="py-3 px-4 border">Supreme Court Ruling on Child Pornography (2024)</td>
+                <td className="py-3 px-4 border">Viewing or storing CSAM was declared a criminal offense.</td>
+                <td className="py-3 px-4 border">Strengthened legal action against offenders and put social media platforms under pressure to monitor content.</td>
               </tr>
-
-              <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
-                  System Crash
-                </td>
-                <td className={`py-3 px-4 ${theme.text}`}>The system crashed unexpectedly</td>
-                <td className={`py-3 px-4 ${theme.text}`}>IT team investigated and restored the system</td>
-                <td className={`py-3 px-4 ${theme.text}`}>Short-term data loss, minor delays</td>
+              <tr className="border border-gray-300">
+                <td className="py-3 px-4 border">NHRC Advisory on CSAM Rise (2023)</td>
+                <td className="py-3 px-4 border">NHRC reported a <strong>250-300% increase</strong> in CSAM circulation on social media.</td>
+                <td className="py-3 px-4 border">Increased government scrutiny on digital platforms and enforcement agencies.</td>
+              </tr>
+              <tr className="border border-gray-300">
+                <td className="py-3 px-4 border">Specialized Police Cyber Units (2022)</td>
+                <td className="py-3 px-4 border">New police units trained to tackle online child exploitation were set up in collaboration with ICMEC & CyberPeace Foundation.</td>
+                <td className="py-3 px-4 border">Improved investigation capabilities and faster response to CSAM cases.</td>
+              </tr>
+              <tr className="border border-gray-300">
+                <td className="py-3 px-4 border">Pandemic-Driven CSAM Spike (2020-21)</td>
+                <td className="py-3 px-4 border"><strong>400% rise</strong> in online crimes against children due to increased internet usage during COVID-19.</td>
+                <td className="py-3 px-4 border">Exposed the need for stricter online safety measures and digital literacy programs.</td>
               </tr>
             </tbody>
           </table>
