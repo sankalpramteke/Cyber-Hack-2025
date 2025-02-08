@@ -15,18 +15,23 @@ const CsamCases: React.FC = () => {
           <table className="min-w-full table-auto">
             <thead>
               <tr className={`border-b ${theme.border}`}>
-                <th className={`py-3 px-4 text-left ${theme.text}`}>What Happened</th>
-                <th className={`py-3 px-4 text-left ${theme.text}`}>Impact</th>
-                <th className={`py-3 px-4 text-left ${theme.text}`}>Event</th>
-                <th className={`py-3 px-4 text-left ${theme.text}`}>Details</th>
-                <th className={`py-3 px-4 text-left ${theme.text}`}>Action Taken</th>
-                <th className={`py-3 px-4 text-left ${theme.text}`}>Outcome</th>
+                <th className={`py-3 px-4 text-left ${theme.text}`} colSpan={2}>What Happened</th>
+                <th className={`py-3 px-4 text-left ${theme.text}`} colSpan={2}>Impact</th>
               </tr>
             </thead>
             <tbody>
               {/* First Row: What Happened and Impact */}
               <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${theme.text}`} colSpan={2}>CBI raided multiple states to crack down on CSAM distribution based on Interpol intelligence.</td>
+                <td className={`py-3 px-4 ${theme.text}`} colSpan={2}>
+                  CBI raided multiple states to crack down on CSAM distribution based on Interpol intelligence.
+                </td>
+                <td className={`py-3 px-4 ${theme.text}`} colSpan={2}>
+                  Highlighted the scale of CSAM circulation and strengthened law enforcement monitoring.
+                </td>
+              </tr>
+
+              {/* Second Row: Event, Details, Action, Outcome */}
+              <tr className={`border-b ${theme.border}`}>
                 <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
                   Software Update
                 </td>
@@ -36,7 +41,6 @@ const CsamCases: React.FC = () => {
               </tr>
 
               <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${theme.text}`} colSpan={2}>Highlighted the scale of CSAM circulation and strengthened law enforcement monitoring.</td>
                 <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
                   System Crash
                 </td>
@@ -46,7 +50,6 @@ const CsamCases: React.FC = () => {
               </tr>
 
               <tr className={`border-b ${theme.border}`}>
-                <td className={`py-3 px-4 ${theme.text}`} colSpan={2}>The scale of CSAM issues led to more focused intervention efforts.</td>
                 <td className={`py-3 px-4 ${isDarkMode ? 'bg-blue-900 text-white' : 'bg-blue-100 text-blue-900'}`}>
                   Security Enhancement
                 </td>
